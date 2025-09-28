@@ -126,7 +126,7 @@ function createElement(element) {
                      <p><b>Stars:</b> ${element.stargazers_count}</p>`;
 
     let img = document.createElement('img');
-    img.src = '/img/cross.svg';
+    img.src = './img/cross.svg';
     div.appendChild(img);
 
     results.appendChild(div);
