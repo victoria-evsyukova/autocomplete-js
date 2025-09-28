@@ -63,7 +63,6 @@ const fetchRepos = debounce(async (e) => {
             const names = filteredRepos.map(repo => '<li>' + repo.name + '</li>');
 
             searchCache.set(valueInput, names);
-            console.log('Cache', searchCache)
 
             serchInput.classList.add('active');
             showSuggestions(names);
@@ -89,7 +88,6 @@ function showSuggestions(list) {
         listData = '<li>Not found...</li>';
     } else {
         listData = list.join('')
-        console.log(listData)
     }
     menu.innerHTML = listData;
     currentFocus = -1;
@@ -133,8 +131,6 @@ function createElement(element) {
 
     results.appendChild(div);
 
-
-
     img.addEventListener('click', function () {
         div.innerHTML = '';
         div.classList.remove('active-div');
@@ -156,13 +152,11 @@ serchInput.addEventListener('keydown', function(event) {
         case 'ArrowDown':
             event.preventDefault();
             currentFocus = currentFocus >= items.length - 1 ? 0 : currentFocus + 1;
-            console.log(currentFocus)
             break;
 
         case 'ArrowUp':
             event.preventDefault();
             currentFocus = currentFocus <= 0 ? items.length - 1 : currentFocus - 1;
-            console.log(currentFocus)
             break;
     }
 
